@@ -10,7 +10,15 @@
 
 class Max : public Observer {
 public:
+    explicit Max(FoglioDiCalcolo *s);
 
+    ~Max() override;
+
+    void calculate() override;
+
+private:
+
+    FoglioDiCalcolo *subjPtr;
 };
 
 
