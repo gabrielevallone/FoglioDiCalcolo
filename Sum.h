@@ -11,6 +11,16 @@
 class Sum : public Observer {
 public:
 
+    explicit Sum(FoglioDiCalcolo *s);
+
+    ~Sum() override;
+
+    void calculate() override;
+
+private:
+
+    FoglioDiCalcolo *subjPtr;
+
 };
 
 

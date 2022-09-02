@@ -3,3 +3,17 @@
 //
 
 #include "Sum.h"
+
+Sum::Sum(FoglioDiCalcolo *s) : subjPtr(s) {
+    subjPtr->addObserver(this);
+}
+
+Sum::~Sum() {
+    subjPtr->removeObserver(this);
+}
+
+void Sum::calculate() {
+
+}
+
+
