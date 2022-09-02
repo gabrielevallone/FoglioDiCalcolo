@@ -10,7 +10,17 @@
 
 class Min : public Observer {
 public:
-    
+
+    explicit Min(FoglioDiCalcolo *s);
+
+    ~Min() override;
+
+    void calculate() override;
+
+private:
+
+    FoglioDiCalcolo *subjPtr;
+
 };
 
 
