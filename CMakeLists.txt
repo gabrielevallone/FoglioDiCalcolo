@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(wxWidgets REQUIRED net gl core base)
 include(${wxWidgets_USE_FILE})
 
-add_executable(FoglioDiCalcolo main.cpp Observer.h Subject.h FoglioDiCalcolo.cpp FoglioDiCalcolo.h)
+add_executable(FoglioDiCalcolo main.cpp Observer.h Subject.h FoglioDiCalcolo.cpp FoglioDiCalcolo.h Max.cpp Max.h)
 target_link_libraries(FoglioDiCalcolo ${wxWidgets_LIBRARIES})
