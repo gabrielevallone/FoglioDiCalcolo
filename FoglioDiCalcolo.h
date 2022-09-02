@@ -11,7 +11,17 @@
 class FoglioDiCalcolo : public Subject {
 public:
 
-    
+    ~FoglioDiCalcolo() override;
+
+    void addObserver(Observer *obs) override;
+
+    void removeObserver(Observer *obs) override;
+
+    void notify() override;
+
+private:
+
+    std::list<Observer *> observerList;
 };
 
 
