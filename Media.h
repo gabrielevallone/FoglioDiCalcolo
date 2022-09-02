@@ -10,8 +10,16 @@
 
 class Media : public Observer {
 public:
-    
 
+    explicit Media(FoglioDiCalcolo *s);
+
+    ~Media() override;
+
+    void calculate() override;
+
+private:
+
+    FoglioDiCalcolo *subjPtr;
 };
 
 

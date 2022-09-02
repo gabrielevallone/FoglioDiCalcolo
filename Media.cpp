@@ -3,3 +3,17 @@
 //
 
 #include "Media.h"
+
+Media::Media(FoglioDiCalcolo *s) : subjPtr(s) {
+    subjPtr->addObserver(this);
+}
+
+Media::~Media() {
+    subjPtr->removeObserver(this);
+}
+
+void Media::calculate() {
+
+}
+
+
