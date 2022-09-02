@@ -8,6 +8,8 @@
 #include "Observer.h"
 
 class Subject {
+public:
+
 
 };
 
