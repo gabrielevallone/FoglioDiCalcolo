@@ -11,12 +11,16 @@
 #include <vector>
 
 struct cellValue {
+
     double value;
     bool isEmpty;
+
 };
 
-class FoglioDiCalcolo : public Subject {
+class FoglioDiCalcolo : public wxFrame, public Subject {
 public:
+
+    explicit FoglioDiCalcolo(const wxString &windowName, int maxNumCells = 50);
 
     ~FoglioDiCalcolo() override;
 
@@ -24,7 +28,7 @@ public:
 
     void removeObserver(Observer *obs) override;
 
-    void notify() override;
+    void notify(wxCommandEvent & WXUNUSED(event)) override;
 
     void initializeWindow();
 

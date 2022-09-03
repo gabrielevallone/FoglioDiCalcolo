@@ -4,6 +4,25 @@
 
 #include "FoglioDiCalcolo.h"
 
+FoglioDiCalcolo::FoglioDiCalcolo(const wxString &windowName, int maxNumCells) :
+        wxFrame(nullptr, wxID_ANY, windowName, wxDefaultPosition, wxSize(720, 480)),
+        numOfCells(maxNumCells), values(new cellValue[maxNumCells]) {
+
+    for (int i = 0; i < numOfCells; i++) {
+        values[i].value = 0;
+        values[i].isEmpty = true;
+    }
+
+    Centre();
+    SetMinSize(wxSize(480, 400));
+    SetMaxSize(wxSize(860, 600));
+
+    initializeWindow();
+
+    Connect(wxEVT_TEXT, wxTextEventHandler(FoglioDiCalcolo::notify));
+
+}
+
 void FoglioDiCalcolo::addObserver(Observer *obs) {
     observerList.push_back(obs);
 }
@@ -12,14 +31,15 @@ void FoglioDiCalcolo::removeObserver(Observer *obs) {
     observerList.remove(obs);
 }
 
-void FoglioDiCalcolo::notify() {
+void FoglioDiCalcolo::notify(wxCommandEvent &) {
 
 }
 
 void FoglioDiCalcolo::initializeWindow() {
+
     boxSizer = new wxBoxSizer(wxVERTICAL);
     panel = new wxPanel(reinterpret_cast<wxWindow *>(this));
-    gridSizer1 = new wxGridSizer(10, 6, 0, 0);
+    gridSizer1 = new wxGridSizer(10, 5, 0, 0);
 
     cells.reserve(static_cast <unsigned long int> (numOfCells));
 
@@ -29,7 +49,7 @@ void FoglioDiCalcolo::initializeWindow() {
         gridSizer1->Add(cells[i], 1, wxALIGN_LEFT);
     }
 
-    gridSizer2 = new wxGridSizer(2, 5, 10, 10);
+    gridSizer2 = new wxGridSizer(2, 4, 10, 10);
 
     sum = new wxStaticText(panel, wxID_ANY, wxT("Somma:"));
     media = new wxStaticText(panel, wxID_ANY, wxT("Media:"));
@@ -42,9 +62,9 @@ void FoglioDiCalcolo::initializeWindow() {
     gridSizer2->Add(min, 1, wxALIGN_BOTTOM);
 
 
-    results.reserve(5);
+    results.reserve(4);
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
         results.push_back(new wxTextCtrl(panel, wxID_EXECUTE, wxEmptyString, wxDefaultPosition, wxSize(120, 30)));
         gridSizer2->Add(results[i], wxALIGN_BOTTOM);
     }
@@ -55,7 +75,10 @@ void FoglioDiCalcolo::initializeWindow() {
     panel->SetSizer(boxSizer);
 }
 
+
 FoglioDiCalcolo::~FoglioDiCalcolo() {
 
 }
+
+
 
