@@ -76,8 +76,48 @@ void FoglioDiCalcolo::initializeWindow() {
 }
 
 
+
 FoglioDiCalcolo::~FoglioDiCalcolo() {
 
+    delete[] values;
+
+    for (int i = 0; i < numOfCells; i++)
+        cells[i]->Destroy();
+    cells.clear();
+
+    for (int i = 0; i < 5; i++)
+        results[i]->Destroy();
+    results.clear();
+
+    sum->Destroy();
+    media->Destroy();
+    max->Destroy();
+    min->Destroy();
+
+    panel->Destroy();
+
+    observerList.clear();
+
+}
+
+const std::list<Observer *> &FoglioDiCalcolo::getObserverList() const {
+    return observerList;
+}
+
+int FoglioDiCalcolo::getNumOfCells() const {
+    return numOfCells;
+}
+
+cellValue *FoglioDiCalcolo::getValues() const {
+    return values;
+}
+
+const std::vector<wxTextCtrl *> &FoglioDiCalcolo::getCells() const {
+    return cells;
+}
+
+const std::vector<wxTextCtrl *> &FoglioDiCalcolo::getResults() const {
+    return results;
 }
 
 

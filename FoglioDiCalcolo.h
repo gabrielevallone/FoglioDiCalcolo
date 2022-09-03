@@ -32,6 +32,16 @@ public:
 
     void initializeWindow();
 
+    const std::list<Observer *> &getObserverList() const;
+
+    int getNumOfCells() const;
+
+    cellValue *getValues() const;
+
+    const std::vector<wxTextCtrl *> &getCells() const;
+
+    const std::vector<wxTextCtrl *> &getResults() const;
+
 private:
 
     std::list<Observer *> observerList;
