@@ -33,6 +33,23 @@ void FoglioDiCalcolo::removeObserver(Observer *obs) {
 
 void FoglioDiCalcolo::notify(wxCommandEvent &) {
 
+    wxString s;
+    for (int i = 0; i < numOfCells; i++) {
+
+        if (cells[i]->GetValue() == wxEmptyString || cells[i]->GetValue() == wxT("-")) {
+            values[i].value = 0;
+            values[i].isEmpty = true;
+
+        } else {
+            s = cells[i]->GetValue();
+            s.ToDouble(&values[i].value);
+            values[i].isEmpty = false;
+        }
+    }
+
+    for (const auto &it: observerList)
+        it->calculate();
+
 }
 
 void FoglioDiCalcolo::initializeWindow() {
