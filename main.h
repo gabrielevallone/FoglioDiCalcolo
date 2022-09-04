@@ -7,6 +7,7 @@
 
 #include <wx/wx.h>
 #include "FoglioDiCalcolo.h"
+#include "Sum.h"
 
 class MyApp : public wxApp {
 public:
@@ -16,6 +17,10 @@ public:
 private:
 
     FoglioDiCalcolo *ptr;
+    Sum *sum;
+
 };
+
+DECLARE_APP(MyApp)
 
 #endif //FOGLIODICALCOLO_MAIN_H
