@@ -8,6 +8,7 @@
 #include <wx/wx.h>
 #include "FoglioDiCalcolo.h"
 #include "Sum.h"
+#include "Media.h"
 
 class MyApp : public wxApp {
 public:
@@ -17,7 +18,9 @@ public:
 private:
 
     FoglioDiCalcolo *ptr;
+
     Sum *sum;
+    Media *media;
 
 };
 

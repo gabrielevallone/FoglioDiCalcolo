@@ -14,6 +14,22 @@ Media::~Media() {
 
 void Media::calculate() {
 
+    double sum = 0;
+    int count = 0;
+
+    for (int i = 0; i < 50; i++)
+        if (!subjPtr->getValues()[i].isEmpty) {
+            sum = sum + subjPtr->getValues()[i].value;
+            count++;
+        }
+
+    if (count != 0) {
+        double media = sum / count;
+        wxString str = wxString::Format(wxT("%lf"), media);
+        subjPtr->getResults()[1]->ChangeValue(str);
+    } else
+        subjPtr->getResults()[1]->ChangeValue(wxT("No values"));
+
 }
 
 
