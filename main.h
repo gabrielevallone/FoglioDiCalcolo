@@ -10,6 +10,7 @@
 #include "Sum.h"
 #include "Media.h"
 #include "Max.h"
+#include "Min.h"
 
 class MyApp : public wxApp {
 public:
@@ -23,6 +24,7 @@ private:
     Sum *sum;
     Media *media;
     Max *max;
+    Min *min;
 
 };
 

@@ -10,6 +10,7 @@ bool MyApp::OnInit() {
     sum = new Sum(ptr);
     media = new Media(ptr);
     max = new Max(ptr);
+    min = new Min(ptr);
 
     ptr->Show(true);
 
