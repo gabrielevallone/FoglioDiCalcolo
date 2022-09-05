@@ -4,7 +4,7 @@
 #include "../main.h"
 
 
-TEST(FoglioDiCalcolo, testingConstructor) {
+TEST(FoglioDiCalcoloSuite, testingConstructor) {
 
     auto ptr = dynamic_cast<FoglioDiCalcolo *> (wxTheApp->GetTopWindow());
     ASSERT_EQ(ptr->GetSize(), wxSize(720, 480));
@@ -14,7 +14,7 @@ TEST(FoglioDiCalcolo, testingConstructor) {
 
 }
 
-TEST(FoglioDiCalcolo, testingEvent) {
+TEST(FoglioDiCalcoloSuite, testingEvent) {
 
     auto ptr = dynamic_cast<FoglioDiCalcolo *> (wxTheApp->GetTopWindow());
     ptr->getCells()[0]->SetValue(wxT("4.3"));
