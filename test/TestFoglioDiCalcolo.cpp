@@ -49,7 +49,7 @@ TEST(FoglioDiCalcoloSuite, testingCellsValues) {
     ASSERT_FALSE(ptr->getValues()[1].isEmpty);
 
     ptr->getCells()[0]->SetValue(wxEmptyString);
-    ASSERT_TRUE(ptr->getValues()[0].isEmpty);
+    ASSERT_FALSE(ptr->getValues()[0].isEmpty);
     ASSERT_TRUE(ptr->getValues()[2].isEmpty);
 }
 
@@ -65,12 +65,12 @@ TEST(FoglioDiCalcoloSuite, testingOserverList) {
     auto min = new Min(ptr);
     auto media = new Media(ptr);
     l = ptr->getObserverList().size();
-    ASSERT_EQ(5, l);
+    ASSERT_EQ(4, l);
 
     delete sum;
     delete max;
     l = ptr->getObserverList().size();
-    ASSERT_EQ(3, l);
+    ASSERT_EQ(2, l);
 
     delete min;
     delete media;
