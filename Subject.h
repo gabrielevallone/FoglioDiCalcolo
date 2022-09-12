@@ -17,8 +17,7 @@ public:
 
     virtual void removeObserver(Observer *obs) = 0;
 
-    virtual void
-    notify(wxCommandEvent &event) = 0; // con wxCommandEvent che è una classe che contiene informazioni sugli eventi di comando
+    virtual void notify(wxCommandEvent &event) = 0;
 
 };
 

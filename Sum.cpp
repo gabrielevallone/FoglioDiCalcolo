@@ -16,12 +16,21 @@ void Sum::calculate() {
 
     double sum = 0;
     bool b = true;
+    int i = 0;
 
-    for (int i = 0; i < 50; i++)
+    while (i < subjPtr->getNumOfCells()) {
         if (!subjPtr->getValues()[i].isEmpty) {
             sum = sum + subjPtr->getValues()[i].value;
             b = false;
         }
+        i++;
+    }
+
+//    for (int i = 0; i < 50; i++)
+//        if (!subjPtr->getValues()[i].isEmpty) {
+//            sum = sum + subjPtr->getValues()[i].value;
+//            b = false;
+//        }
 
     if (b)
         subjPtr->getResults()[0]->ChangeValue(wxT("No values"));

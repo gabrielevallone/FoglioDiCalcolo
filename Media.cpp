@@ -16,12 +16,21 @@ void Media::calculate() {
 
     double sum = 0;
     int count = 0;
+    int i = 0;
 
-    for (int i = 0; i < 50; i++)
+    while (i < subjPtr->getNumOfCells()) {
         if (!subjPtr->getValues()[i].isEmpty) {
             sum = sum + subjPtr->getValues()[i].value;
             count++;
         }
+        i++;
+    }
+
+//    for (int i = 0; i < 50; i++)
+//        if (!subjPtr->getValues()[i].isEmpty) {
+//            sum = sum + subjPtr->getValues()[i].value;
+//            count++;
+//        }
 
     if (count != 0) {
         double media = sum / count;
