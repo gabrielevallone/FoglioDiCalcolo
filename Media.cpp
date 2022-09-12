@@ -18,7 +18,7 @@ void Media::calculate() {
     int count = 0;
     int i = 0;
 
-    while (i < subjPtr->getNumOfCells()) {
+    while (i < subjPtr->getNumOfCells() && !subjPtr->getValues()->isEmpty) {
         if (!subjPtr->getValues()[i].isEmpty) {
             sum = sum + subjPtr->getValues()[i].value;
             count++;

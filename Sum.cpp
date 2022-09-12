@@ -18,7 +18,7 @@ void Sum::calculate() {
     bool b = true;
     int i = 0;
 
-    while (i < subjPtr->getNumOfCells()) {
+    while (i < subjPtr->getNumOfCells() && !subjPtr->getValues()->isEmpty) {
         if (!subjPtr->getValues()[i].isEmpty) {
             sum = sum + subjPtr->getValues()[i].value;
             b = false;
