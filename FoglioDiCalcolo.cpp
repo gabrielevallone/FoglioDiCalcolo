@@ -31,7 +31,7 @@ void FoglioDiCalcolo::removeObserver(Observer *obs) {
     observerList.remove(obs);
 }
 
-void FoglioDiCalcolo::notify(wxCommandEvent &) {
+void FoglioDiCalcolo::notify(wxCommandEvent &event) {
 
     wxString s;
     for (int i = 0; i < numOfCells; i++) {

@@ -28,7 +28,7 @@ public:
 
     void removeObserver(Observer *obs) override;
 
-    void notify(wxCommandEvent & WXUNUSED(event)) override;
+    void notify(wxCommandEvent &event) override;
 
     void initializeWindow();
 
